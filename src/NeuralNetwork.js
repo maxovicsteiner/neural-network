@@ -51,7 +51,7 @@ class NeuralNetwork {
     // Convert the inputs array to a matrix for easier manipulation
     let inputs = Matrix.fromArray(inputs_array);
     // Get the grayscale value of every pixel
-    //inputs.map(normalize);
+    inputs.map(normalize);
 
     // Feed forward
     // I -> H1
