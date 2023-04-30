@@ -1,0 +1,46 @@
+* {
+  user-select: none;
+}
+body {
+  background-color: rgb(227, 227, 227);
+}
+
+canvas {
+  background-color: black;
+}
+
+#submit {
+  background-color: royalblue;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#submit:hover {
+  background-color: rgb(45, 72, 153);
+}
+
+#reset {
+  background-color: rgb(166, 54, 194);
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#reset:hover {
+  background-color: rgb(134, 48, 165);
+}
