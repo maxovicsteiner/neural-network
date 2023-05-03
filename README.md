@@ -92,7 +92,7 @@ if (req.url === "/files" && req.method === "PATCH") {
 }
 ```
 
-Note: Here are the two helper functions involved in the process
+Here are the two helper functions involved in the process
 
 ```javascript
 /**
