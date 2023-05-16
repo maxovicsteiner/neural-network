@@ -19,14 +19,14 @@ class NeuralNetwork {
     this.output_length = output_length;
 
     // weights
-    this.weights_ih1 = new Matrix(h1_length, input_length, data[0][0]);
-    this.weights_h1h2 = new Matrix(h2_length, h1_length, data[0][1]);
-    this.weights_h2o = new Matrix(output_length, h2_length, data[0][2]);
+    this.weights_ih1 = new Matrix(h1_length, input_length);
+    this.weights_h1h2 = new Matrix(h2_length, h1_length);
+    this.weights_h2o = new Matrix(output_length, h2_length);
 
     // biases
-    this.bias_h1 = new Matrix(h1_length, 1, data[1][0]);
-    this.bias_h2 = new Matrix(h2_length, 1, data[1][1]);
-    this.bias_o = new Matrix(output_length, 1, data[1][2]);
+    this.bias_h1 = new Matrix(h1_length, 1);
+    this.bias_h2 = new Matrix(h2_length, 1);
+    this.bias_o = new Matrix(output_length, 1);
 
     if (data === null) {
       this.weights_ih1.randomize();
@@ -35,6 +35,13 @@ class NeuralNetwork {
       this.bias_h1.randomize();
       this.bias_h2.randomize();
       this.bias_o.randomize();
+    } else {
+      this.weights_ih1.fill(data[0][0]);
+      this.weights_h1h2.fill(data[0][1]);
+      this.weights_h2o.fill(data[0][2]);
+      this.bias_h1.fill(data[1][0]);
+      this.bias_h2.fill(data[1][1]);
+      this.bias_o.fill(data[1][2]);
     }
 
     // learning rate

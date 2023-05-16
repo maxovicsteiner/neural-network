@@ -4,17 +4,14 @@ class Matrix {
    * @param {Number} rows
    * @param {Number} cols
    */
-  constructor(rows, cols, data = []) {
+  constructor(rows, cols) {
     this.rows = rows;
     this.cols = cols;
-    this.data = data;
-
-    if (this.data.length === 0) {
-      for (let i = 0; i < rows; i++) {
-        this.data.push([]);
-        for (let j = 0; j < cols; j++) {
-          this.data[i][j] = 0;
-        }
+    this.data = [];
+    for (let i = 0; i < rows; i++) {
+      this.data.push([]);
+      for (let j = 0; j < cols; j++) {
+        this.data[i][j] = 0;
       }
     }
   }
@@ -190,6 +187,10 @@ class Matrix {
         m1.data[i][j] += num;
       }
     }
+  }
+
+  fill(data) {
+    this.data = data;
   }
 
   reset() {
