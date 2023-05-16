@@ -78,18 +78,27 @@ let t_index = 0;
 
     const server = http.createServer(async (req, res) => {
       try {
-        // if (req.url === "/files" && req.method === "PATCH") {
-        //   let path = "./samples/t10k-labels-idx1-ubyte";
+        // if (req.url === "/files" && req.method === "POST") {
+        //   let path = "./samples/train-images.idx3-ubyte";
 
         //   const data = await readIdxFile(path);
         //   const output = [];
-        //   let header_l = 8;
-
+        //   let header_l = 16;
+        //   let temp_row = [];
+        //   let temp_col = [];
         //   for (let i = 0; i + header_l < data.length; i++) {
-        //     output.push(data[i + header_l]);
+        //     temp_row.push(data[i + header_l]);
+        //     if (temp_row.length === 28) {
+        //       temp_col.push(temp_row);
+        //       temp_row = [];
+        //     }
+        //     if (temp_col.length === 28) {
+        //       output.push(temp_col);
+        //       temp_col = [];
+        //     }
         //   }
         //   await inputIntoJson(
-        //     "./samples/json/test-labels.json",
+        //     "./samples/json/training-images.json",
         //     JSON.stringify(output)
         //   );
         //   res.statusCode = 200;
@@ -105,6 +114,7 @@ let t_index = 0;
             case "/reset":
               index = 0;
               t_index = 0;
+              res.end("Resetted counter");
               break;
             case "/files/training":
               // let random_index =
