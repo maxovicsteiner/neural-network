@@ -1,3 +1,7 @@
+# Preview
+
+[Website](https://digit-guesser.netlify.app)
+
 # Get started
 
 ## Requirements
